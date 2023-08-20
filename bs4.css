@@ -126,12 +126,8 @@
     }
 
     .select2-selection__clear {
-        float: right;
-        margin-top: 0.3em;
-        margin-right: 0.1em;
-        font-size: 1.25em;
+        font-size: 1.5em;
         font-weight: bold;
-        line-height: 1;
         color: var(--danger);
         background-color: transparent;
 
@@ -157,6 +153,13 @@
 
         .select2-selection__arrow {
             display: none;
+        }
+
+        .select2-selection__clear {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1.75rem;
         }
     }
 
@@ -217,10 +220,7 @@
 
         .select2-selection__clear {
             position: absolute;
-            top: 0;
             right: 0.5em;
-            float: none;
-            margin-right: 0;
         }
     }
 
@@ -284,10 +284,6 @@
         .select2-selection--single {
             background: var(--s2-select-indicator) right 0.75rem center/8px 10px no-repeat,
                 var(--white) var(--s2-form-feedback-icon-valid) center right 1.75rem / calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
-
-            .select2-selection__rendered {
-                padding-right: calc(0.75em + 2.3125rem);
-            }
         }
     }
 }
@@ -309,9 +305,22 @@
         .select2-selection--single {
             background: var(--s2-select-indicator) right 0.75rem center/8px 10px no-repeat,
                 var(--white) var(--s2-form-feedback-icon-invalid) center right 1.75rem / calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
+        }
+    }
+}
 
+.is-valid,
+.was-validated select:valid,
+.is-invalid,
+.was-validated select:invalid {
+    + .select2-container--bootstrap4 {
+        .select2-selection--single {
             .select2-selection__rendered {
                 padding-right: calc(0.75em + 2.3125rem);
+            }
+
+            .select2-selection__clear {
+                right: calc(0.75em + 2.125rem);
             }
         }
     }

@@ -109,14 +109,10 @@
 }
 
 .select2-container--bootstrap4 .select2-selection__clear {
-  float: right;
   color: var(--danger);
   background-color: #0000;
-  margin-top: .3em;
-  margin-right: .1em;
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: bold;
-  line-height: 1;
 }
 
 .select2-container--bootstrap4 .select2-selection__clear:hover {
@@ -141,6 +137,13 @@
 
 .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
   display: none;
+}
+
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__clear {
+  position: absolute;
+  top: 50%;
+  right: 1.75rem;
+  transform: translateY(-50%);
 }
 
 .select2-container--bootstrap4 .select2-search--dropdown .select2-search__field {
@@ -200,10 +203,7 @@
 }
 
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__clear {
-  float: none;
-  margin-right: 0;
   position: absolute;
-  top: 0;
   right: .5em;
 }
 
@@ -257,10 +257,6 @@
   background: var(--s2-select-indicator) right .75rem center / 8px 10px no-repeat, var(--white) var(--s2-form-feedback-icon-valid) center right 1.75rem / calc(.75em + .375rem) calc(.75em + .375rem) no-repeat;
 }
 
-:is(.is-valid, .was-validated select:valid) + .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
-  padding-right: calc(.75em + 2.3125rem);
-}
-
 :is(.is-invalid, .was-validated select:invalid) + .select2-container--bootstrap4 .select2-selection {
   border-color: var(--danger);
 }
@@ -273,6 +269,10 @@
   background: var(--s2-select-indicator) right .75rem center / 8px 10px no-repeat, var(--white) var(--s2-form-feedback-icon-invalid) center right 1.75rem / calc(.75em + .375rem) calc(.75em + .375rem) no-repeat;
 }
 
-:is(.is-invalid, .was-validated select:invalid) + .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
+:is(.is-valid, .was-validated select:valid, .is-invalid, .was-validated select:invalid) + .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
   padding-right: calc(.75em + 2.3125rem);
+}
+
+:is(.is-valid, .was-validated select:valid, .is-invalid, .was-validated select:invalid) + .select2-container--bootstrap4 .select2-selection--single .select2-selection__clear {
+  right: calc(.75em + 2.125rem);
 }
