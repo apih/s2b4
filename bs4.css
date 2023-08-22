@@ -202,6 +202,11 @@
         .select2-search__field {
             margin-top: 0.5em;
             color: var(--s2-input-color);
+
+            &::placeholder {
+                color: var(--s2-gray-600);
+                opacity: 1;
+            }
         }
 
         .select2-selection__choice__remove {

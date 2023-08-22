@@ -164,7 +164,7 @@
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding: 0.1875rem .75rem;
+    padding: .1875rem .75rem;
     list-style: none;
 }
 
@@ -186,6 +186,11 @@
 .select2-container--bootstrap4 .select2-selection--multiple .select2-search__field {
     color: var(--s2-input-color);
     margin-top: .5em;
+}
+
+.select2-container--bootstrap4 .select2-selection--multiple .select2-search__field::placeholder {
+    color: var(--s2-gray-600);
+    opacity: 1;
 }
 
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove {
