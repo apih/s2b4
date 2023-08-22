@@ -179,7 +179,7 @@
         .select2-selection__rendered {
             box-sizing: border-box;
             width: 100%;
-            padding: 0 0.75rem;
+            padding: 0.1875rem 0.75rem;
             margin: 0;
             list-style: none;
         }
